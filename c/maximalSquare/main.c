@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+#include <readline/readline.h>
+#include <readline/history.h>
 #include "maximalSquare.h"
 
 // Goal: Find the largest square of 1s
@@ -12,26 +15,24 @@
 // Test cases
 
 int getValidGridSize();
+int * createGrid(int numberOfCells);
+void destroyGrid(int * grid);
+int * getValidGrid(int size);
 
 int main(int argc, char * argv[]) {
-    int gridSize = getValidGridSize();
-    int * grid = malloc(gridSize * sizeof(int));
+    int size = getValidGridSize();
+    int * grid = getValidGrid(size);
     
-    if(grid == NULL) {
-        fprintf(stderr, "grid memory allocation failed\n");
-        exit(1);
-    }
-    
-    // int sqaureSize = maximalSquare(grid, gridSize, gridSize);
+    // int sqaureSize = maximalSquare(grid, size, size);
     // printf("The max size is: %d\n", sqaureSize);
     
-    free(grid);
+    destroyGrid(grid);
     
     return EXIT_SUCCESS;
 }
 
 int getValidGridSize() {
-    printf("Enter the size of the grid: ");
+    printf("Enter the size of the grid (the number of rows or cols): ");
     
     int size;
     int chars = scanf("%d", &size);
@@ -42,10 +43,32 @@ int getValidGridSize() {
     } else if(size <= 0) {
         printf("Grid size must be greater than 0\n");
         exit(1);
-    } else if(size % 2 != 0) {
-        printf("Grid size must be even\n");
-        exit(1);
     } else {
         return size;
     }
+}
+
+int * createGrid(int numberOfCells) {
+    int * grid = malloc(numberOfCells * sizeof(int));
+    
+    if(grid == NULL) {
+        fprintf(stderr, "Grid memory allocation failed\n");
+        exit(1);
+    } else {
+        return grid;
+    }
+}
+
+void destroyGrid(int * grid) {
+    free(grid);
+    grid = NULL;
+}
+
+int * getValidGrid(int size) {
+    int numberOfCells = size * size;
+    int * grid = createGrid(numberOfCells);
+    
+    printf("Enter the grid (each row on a new line, space separated integers):\n");
+    
+    return grid;
 }
