@@ -14,18 +14,33 @@
 // Test cases
 // Get int * grid[] type to work?
 
+int getValidGridSize();
+
 int main(int argc, char * argv[]) {
-    int grid[5][5] = {
-        {1, 1, 1, 1, 1},
-        {1, 1, 0, 1, 0},
-        {1, 1, 0, 1, 1},
-        {1, 1, 1, 1, 0},
-        {1, 0, 0, 1, 0}
-    };
-    int * gridP = &grid[0][0];
+    int gridSize = getValidGridSize();
     
-    int size = maximalSquare(gridP, 5, 5);
-    printf("The max size is: %d\n", size);
+    // int size = maximalSquare(gridP, 5, 5);
+    // printf("The max size is: %d\n", size);
     
     return EXIT_SUCCESS;
+}
+
+int getValidGridSize() {
+    printf("Enter the size of the grid: ");
+    
+    int size;
+    int chars = scanf("%d", &size);
+    
+    if(chars < 0) {
+        printf("\nCould not read a number\n");
+        exit(1);
+    } else if(size <= 0) {
+        printf("Grid size must be greater than 0\n");
+        exit(1);
+    } else if(size % 2 != 0) {
+        printf("Grid size must be even\n");
+        exit(1);
+    } else {
+        return size;
+    }
 }
