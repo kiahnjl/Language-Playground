@@ -14,6 +14,9 @@
 // Error checking in all functions
 // Test cases
 
+#define MIN_GRID_SIZE 1
+#define MAX_GRID_SIZE 100
+
 int getValidGridSize();
 int * createGrid(int numberOfCells);
 void destroyGrid(int * grid);
@@ -40,8 +43,8 @@ int getValidGridSize() {
     if(chars < 0) {
         printf("\nCould not read a number\n");
         exit(1);
-    } else if(size <= 0) {
-        printf("Grid size must be greater than 0\n");
+    } else if(size < MIN_GRID_SIZE || size > MAX_GRID_SIZE) {
+        printf("Grid size should be >= %d and <= %d\n", MIN_GRID_SIZE, MAX_GRID_SIZE);
         exit(1);
     } else {
         return size;
