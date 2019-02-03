@@ -13,6 +13,7 @@
 // Improve time complexity from O(n^2)
 // Error checking in all functions
 // Test cases
+// Cleanup abstractions - do they make sense?
 
 #define MIN_GRID_SIZE 1
 #define MAX_GRID_SIZE 100
@@ -21,13 +22,14 @@ int getValidGridSize();
 int * createGrid(int numberOfCells);
 void destroyGrid(int * grid);
 int * getValidGrid(int size);
+void printGrid(int * grid, int size);
 
 int main(int argc, char * argv[]) {
     int size = getValidGridSize();
     int * grid = getValidGrid(size);
     
-    // int sqaureSize = maximalSquare(grid, size, size);
-    // printf("The max size is: %d\n", sqaureSize);
+    int sqaureSize = maximalSquare(grid, size, size);
+    printf("The max size is: %d\n", sqaureSize);
     
     destroyGrid(grid);
     
@@ -73,9 +75,29 @@ int * getValidGrid(int size) {
     
     for(int i = 0; i < size; i++) {
         char * line = readLine(stdin);
-        printf("%s\n", line);
+        
+        for(int j = 0; j < size; j++) {
+            char * temp = malloc(sizeof(char));
+            *temp = line[j * 2]; // Skip the whitespace
+            
+            int cell = parseInt(temp); 
+            *(grid + (i * size) + j) = cell;
+            
+            free(temp);
+        }
+        
         free(line);
     }
     
     return grid;
+}
+
+void printGrid(int * grid, int size) {
+    printf("\n");
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            printf("%d ", *(grid + (i * size) + j));
+        }
+        printf("\n");
+    }
 }
