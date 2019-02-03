@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <readline/readline.h>
-#include <readline/history.h>
+#include "../io/io.h"
+#include "../math/math.h"
 #include "maximalSquare.h"
 
 // Goal: Find the largest square of 1s
@@ -37,13 +37,11 @@ int main(int argc, char * argv[]) {
 int getValidGridSize() {
     printf("Enter the size of the grid (the number of rows or cols): ");
     
-    int size;
-    int chars = scanf("%d", &size);
+    char * line = readLine(stdin);
+    int size = parseInt(line);
+    free(line);
     
-    if(chars < 0) {
-        printf("\nCould not read a number\n");
-        exit(1);
-    } else if(size < MIN_GRID_SIZE || size > MAX_GRID_SIZE) {
+    if(size < MIN_GRID_SIZE || size > MAX_GRID_SIZE) {
         printf("Grid size should be >= %d and <= %d\n", MIN_GRID_SIZE, MAX_GRID_SIZE);
         exit(1);
     } else {
@@ -72,6 +70,12 @@ int * getValidGrid(int size) {
     int * grid = createGrid(numberOfCells);
     
     printf("Enter the grid (each row on a new line, space separated integers):\n");
+    
+    for(int i = 0; i < size; i++) {
+        char * line = readLine(stdin);
+        printf("%s\n", line);
+        free(line);
+    }
     
     return grid;
 }
