@@ -8,19 +8,24 @@
 
 // todo
 // Improve time complexity from O(n^2)
-// Read from stdin
-// And allow any number of rows or columns
-// Error checking all functions
+// Error checking in all functions
 // Test cases
-// Get int * grid[] type to work?
 
 int getValidGridSize();
 
 int main(int argc, char * argv[]) {
     int gridSize = getValidGridSize();
+    int * grid = malloc(gridSize * sizeof(int));
     
-    // int size = maximalSquare(gridP, 5, 5);
-    // printf("The max size is: %d\n", size);
+    if(grid == NULL) {
+        fprintf(stderr, "grid memory allocation failed\n");
+        exit(1);
+    }
+    
+    // int sqaureSize = maximalSquare(grid, gridSize, gridSize);
+    // printf("The max size is: %d\n", sqaureSize);
+    
+    free(grid);
     
     return EXIT_SUCCESS;
 }
