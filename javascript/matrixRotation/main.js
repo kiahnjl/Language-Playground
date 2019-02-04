@@ -4,6 +4,9 @@
 * Disclaimer:
 * IO code and problem is from https://www.hackerrank.com/challenges/matrix-rotation-algo/problem
 * I implemented the matrixRotation function
+* 
+* Todo:
+* Improve efficiency - better algorithm
 * */
 
 process.stdin.resume();
@@ -66,16 +69,70 @@ function matrixRotation(matrix, r) {
         endCol--;
     }
 
-
+    // 2) do the rotation
     for(let i = 0; i < newMatrix.length; i++) {
-        console.log(newMatrix[i]);
+        let outer = newMatrix[i];
+        let len = outer.length;
+        let equivalentR = r % len;
+        let temp = [];
+        
+        for(let j = 0; j < len; j++) {
+            let nextIndex = (j + equivalentR) % len;
+            temp[nextIndex] = outer[j];
+        }
+        
+        newMatrix[i] = temp;
     }
 
-    // 2) do the rotation
+    row = 0;
+    col = 0;
+    endRow = matrix.length - 1;
+    endCol = matrix[0].length - 1;
+    let finalMatrix = [];
 
+    // 3) transform it back
+   for(let i = 0; i < newMatrix.length; i++) {
+       let curr = newMatrix[i];
+       let currIndex = 0;
+       
+       // add the left column
+       // after this all the rows will be added
+       for(let j = row; j <= endRow; j++) {
+           finalMatrix[j] = finalMatrix[j] || [];
+           finalMatrix[j][col] = curr[currIndex];
+           currIndex++;
+       }
+
+       // add the bottom row
+       for(let j = (col + 1); j <= endCol; j++) {
+           finalMatrix[endRow][j] = curr[currIndex];
+           currIndex++;
+       }
+
+       // add the left column
+       for(let j = (endRow - 1); j >= row; j--) {
+           finalMatrix[j][endCol] = curr[currIndex];
+           currIndex++;
+       }
+
+       // add the top row
+       for(let j = (endCol - 1); j > col; j--) {
+           finalMatrix[row][j] = curr[currIndex];
+           currIndex++;
+       }
+
+       row++;
+       col++;
+       endRow--;
+       endCol--;
+   }
     
-
-    // 3) print the result
+    for(let i = 0; i < finalMatrix.length; i++) {
+        console.log(finalMatrix[i].reduce((r, e, i) => {
+            let col = i === 0 ? e : (' ' + e);
+            return r + col;
+        }, ''));
+    }
 }
 
 function main() {
