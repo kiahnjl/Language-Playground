@@ -59,7 +59,10 @@ function buildString(a, b, s) {
     return cost;
 }
 
-function calcCost(a, b, s, temp, built) {
+function calcCost(built, substr, remaining, a, b, s) {
+    if(remaining === '') {
+        return 0; // no cost for building an empty string
+    }
 
 
     // branch
