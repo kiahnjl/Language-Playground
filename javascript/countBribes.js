@@ -1,60 +1,31 @@
 // Find out how many bribes were taken to get the queue in its current state
-// if one item bribed more than twice then the queue invalid
+// if one person bribed more than twice then the queue invalid
 
-const MAX_BRIBES = 2;
+let countBribes = function(q) {
+    let MAX_BRIBES = 2;
+    let validBribes = true;
+    let bribeCount = 0;
 
-let isSortedAscending = function(a) {
-    let inOrder = true;
-    
-    for(let i = 0; (inOrder && i < (a.length - 1)); i++) {
-        inOrder = a[i] < a[i + 1];
-    }
-    
-    return inOrder;
-};
+    for(let i = 0; i < q.length; i++) {
+        // early exit
+        if((q[i] - (i + 1)) > MAX_BRIBES) {
+            validBribes = false;
+            break;
+        }
 
-let containsBiggerThan = function(a, v) {
-    return a.filter(function(e) {
-        return e > v;
-    }).length > 0;
-};
-
-let countBribes = function(queue, bribesTaken = [], bribeCount = 0) {
-    if(isSortedAscending(queue)) {
-        return bribeCount;
-    }
-    if(containsBiggerThan(bribesTaken, 2) || bribeCount > (queue.length * 2)) {
-        return -1;
-    }
-    let minBribeCount = -1;
-    
-    for(let i = 0; i < (queue.length - 1); i++) {
-        let didBribe = queue[i] > (i + 1);
-        
-        if(didBribe) {
-            let queueCopy = queue.slice();
-            queueCopy[i] = queue[i + 1];
-            queueCopy[i + 1] = queue[i];
-            let bribesTakenCopy = bribesTaken.slice();
-            bribesTakenCopy[queue[i]] = bribesTakenCopy[queue[i]] || 0;
-            bribesTakenCopy[queue[i]]++;
-            let pathBribeCount = countBribes(queueCopy, bribesTakenCopy, bribeCount + 1);
-            
-            if((minBribeCount === -1 && pathBribeCount >= 0) || pathBribeCount < minBribeCount) {
-                minBribeCount = pathBribeCount;
+        // how many times has q[i] been bribed
+        // check all in front of me - who in the queue has a bigger number than me!
+        // I dont need to check more than max bribes before me
+        // - because that's an illegal number of bribes
+        for(let j = (i - 1); (j >= 0 && j >= (q[i] - MAX_BRIBES)); j--) {
+            if(q[j] > q[i]) {
+                bribeCount++;
             }
         }
     }
-    
-    return minBribeCount;
-};
 
-// console.log(isSortedAscending([]));
-// console.log(isSortedAscending([1]));
-// console.log(isSortedAscending([1,2]));
-// console.log(isSortedAscending([2,1]));
-// console.log(isSortedAscending([1,20,100]));
-// console.log(isSortedAscending([1,20,-100,0]));
+    return validBribes ? bribeCount : 'Too chaotic';
+};
 
 console.log(countBribes([1,2,5,3,7,8,6,4]));
 console.log(countBribes([2,1,5,3,4]));
