@@ -1,0 +1,480 @@
+Test 0: 
+[ 1, 2, 3, 4, 5 ]
+Min swaps: 0
+
+Test 1: 
+[ 1, 2, 3, 5, 4 ]
+Min swaps: 1
+
+Test 2: 
+[ 1, 2, 4, 3, 5 ]
+Min swaps: 1
+
+Test 3: 
+[ 1, 2, 4, 5, 3 ]
+Min swaps: 2
+
+Test 4: 
+[ 1, 2, 5, 3, 4 ]
+Min swaps: 2
+
+Test 5: 
+[ 1, 2, 5, 4, 3 ]
+Min swaps: 1
+
+Test 6: 
+[ 1, 3, 2, 4, 5 ]
+Min swaps: 1
+
+Test 7: 
+[ 1, 3, 2, 5, 4 ]
+Min swaps: 2
+
+Test 8: 
+[ 1, 3, 4, 2, 5 ]
+Min swaps: 2
+
+Test 9: 
+[ 1, 3, 4, 5, 2 ]
+Min swaps: 3
+
+Test 10: 
+[ 1, 3, 5, 2, 4 ]
+Min swaps: 3
+
+Test 11: 
+[ 1, 3, 5, 4, 2 ]
+Min swaps: 2
+
+Test 12: 
+[ 1, 4, 2, 3, 5 ]
+Min swaps: 2
+
+Test 13: 
+[ 1, 4, 2, 5, 3 ]
+Min swaps: 3
+
+Test 14: 
+[ 1, 4, 3, 2, 5 ]
+Min swaps: 1
+
+Test 15: 
+[ 1, 4, 3, 5, 2 ]
+Min swaps: 2
+
+Test 16: 
+[ 1, 4, 5, 2, 3 ]
+Min swaps: 2
+
+Test 17: 
+[ 1, 4, 5, 3, 2 ]
+Min swaps: 3
+
+Test 18: 
+[ 1, 5, 2, 3, 4 ]
+Min swaps: 3
+
+Test 19: 
+[ 1, 5, 2, 4, 3 ]
+Min swaps: 2
+
+Test 20: 
+[ 1, 5, 3, 2, 4 ]
+Min swaps: 2
+
+Test 21: 
+[ 1, 5, 3, 4, 2 ]
+Min swaps: 1
+
+Test 22: 
+[ 1, 5, 4, 2, 3 ]
+Min swaps: 3
+
+Test 23: 
+[ 1, 5, 4, 3, 2 ]
+Min swaps: 2
+
+Test 24: 
+[ 2, 1, 3, 4, 5 ]
+Min swaps: 1
+
+Test 25: 
+[ 2, 1, 3, 5, 4 ]
+Min swaps: 2
+
+Test 26: 
+[ 2, 1, 4, 3, 5 ]
+Min swaps: 2
+
+Test 27: 
+[ 2, 1, 4, 5, 3 ]
+Min swaps: 3
+
+Test 28: 
+[ 2, 1, 5, 3, 4 ]
+Min swaps: 3
+
+Test 29: 
+[ 2, 1, 5, 4, 3 ]
+Min swaps: 2
+
+Test 30: 
+[ 2, 3, 1, 4, 5 ]
+Min swaps: 2
+
+Test 31: 
+[ 2, 3, 1, 5, 4 ]
+Min swaps: 3
+
+Test 32: 
+[ 2, 3, 4, 1, 5 ]
+Min swaps: 3
+
+Test 33: 
+[ 2, 3, 4, 5, 1 ]
+Min swaps: 4
+
+Test 34: 
+[ 2, 3, 5, 1, 4 ]
+Min swaps: 4
+
+Test 35: 
+[ 2, 3, 5, 4, 1 ]
+Min swaps: 3
+
+Test 36: 
+[ 2, 4, 1, 3, 5 ]
+Min swaps: 3
+
+Test 37: 
+[ 2, 4, 1, 5, 3 ]
+Min swaps: 4
+
+Test 38: 
+[ 2, 4, 3, 1, 5 ]
+Min swaps: 2
+
+Test 39: 
+[ 2, 4, 3, 5, 1 ]
+Min swaps: 3
+
+Test 40: 
+[ 2, 4, 5, 1, 3 ]
+Min swaps: 3
+
+Test 41: 
+[ 2, 4, 5, 3, 1 ]
+Min swaps: 4
+
+Test 42: 
+[ 2, 5, 1, 3, 4 ]
+Min swaps: 4
+
+Test 43: 
+[ 2, 5, 1, 4, 3 ]
+Min swaps: 3
+
+Test 44: 
+[ 2, 5, 3, 1, 4 ]
+Min swaps: 3
+
+Test 45: 
+[ 2, 5, 3, 4, 1 ]
+Min swaps: 2
+
+Test 46: 
+[ 2, 5, 4, 1, 3 ]
+Min swaps: 4
+
+Test 47: 
+[ 2, 5, 4, 3, 1 ]
+Min swaps: 3
+
+Test 48: 
+[ 3, 1, 2, 4, 5 ]
+Min swaps: 2
+
+Test 49: 
+[ 3, 1, 2, 5, 4 ]
+Min swaps: 3
+
+Test 50: 
+[ 3, 1, 4, 2, 5 ]
+Min swaps: 3
+
+Test 51: 
+[ 3, 1, 4, 5, 2 ]
+Min swaps: 4
+
+Test 52: 
+[ 3, 1, 5, 2, 4 ]
+Min swaps: 4
+
+Test 53: 
+[ 3, 1, 5, 4, 2 ]
+Min swaps: 3
+
+Test 54: 
+[ 3, 2, 1, 4, 5 ]
+Min swaps: 1
+
+Test 55: 
+[ 3, 2, 1, 5, 4 ]
+Min swaps: 2
+
+Test 56: 
+[ 3, 2, 4, 1, 5 ]
+Min swaps: 2
+
+Test 57: 
+[ 3, 2, 4, 5, 1 ]
+Min swaps: 3
+
+Test 58: 
+[ 3, 2, 5, 1, 4 ]
+Min swaps: 3
+
+Test 59: 
+[ 3, 2, 5, 4, 1 ]
+Min swaps: 2
+
+Test 60: 
+[ 3, 4, 1, 2, 5 ]
+Min swaps: 2
+
+Test 61: 
+[ 3, 4, 1, 5, 2 ]
+Min swaps: 3
+
+Test 62: 
+[ 3, 4, 2, 1, 5 ]
+Min swaps: 3
+
+Test 63: 
+[ 3, 4, 2, 5, 1 ]
+Min swaps: 4
+
+Test 64: 
+[ 3, 4, 5, 1, 2 ]
+Min swaps: 4
+
+Test 65: 
+[ 3, 4, 5, 2, 1 ]
+Min swaps: 3
+
+Test 66: 
+[ 3, 5, 1, 2, 4 ]
+Min swaps: 3
+
+Test 67: 
+[ 3, 5, 1, 4, 2 ]
+Min swaps: 2
+
+Test 68: 
+[ 3, 5, 2, 1, 4 ]
+Min swaps: 4
+
+Test 69: 
+[ 3, 5, 2, 4, 1 ]
+Min swaps: 3
+
+Test 70: 
+[ 3, 5, 4, 1, 2 ]
+Min swaps: 3
+
+Test 71: 
+[ 3, 5, 4, 2, 1 ]
+Min swaps: 4
+
+Test 72: 
+[ 4, 1, 2, 3, 5 ]
+Min swaps: 3
+
+Test 73: 
+[ 4, 1, 2, 5, 3 ]
+Min swaps: 4
+
+Test 74: 
+[ 4, 1, 3, 2, 5 ]
+Min swaps: 2
+
+Test 75: 
+[ 4, 1, 3, 5, 2 ]
+Min swaps: 3
+
+Test 76: 
+[ 4, 1, 5, 2, 3 ]
+Min swaps: 3
+
+Test 77: 
+[ 4, 1, 5, 3, 2 ]
+Min swaps: 4
+
+Test 78: 
+[ 4, 2, 1, 3, 5 ]
+Min swaps: 2
+
+Test 79: 
+[ 4, 2, 1, 5, 3 ]
+Min swaps: 3
+
+Test 80: 
+[ 4, 2, 3, 1, 5 ]
+Min swaps: 1
+
+Test 81: 
+[ 4, 2, 3, 5, 1 ]
+Min swaps: 2
+
+Test 82: 
+[ 4, 2, 5, 1, 3 ]
+Min swaps: 2
+
+Test 83: 
+[ 4, 2, 5, 3, 1 ]
+Min swaps: 3
+
+Test 84: 
+[ 4, 3, 1, 2, 5 ]
+Min swaps: 3
+
+Test 85: 
+[ 4, 3, 1, 5, 2 ]
+Min swaps: 4
+
+Test 86: 
+[ 4, 3, 2, 1, 5 ]
+Min swaps: 2
+
+Test 87: 
+[ 4, 3, 2, 5, 1 ]
+Min swaps: 3
+
+Test 88: 
+[ 4, 3, 5, 1, 2 ]
+Min swaps: 3
+
+Test 89: 
+[ 4, 3, 5, 2, 1 ]
+Min swaps: 4
+
+Test 90: 
+[ 4, 5, 1, 2, 3 ]
+Min swaps: 4
+
+Test 91: 
+[ 4, 5, 1, 3, 2 ]
+Min swaps: 3
+
+Test 92: 
+[ 4, 5, 2, 1, 3 ]
+Min swaps: 3
+
+Test 93: 
+[ 4, 5, 2, 3, 1 ]
+Min swaps: 4
+
+Test 94: 
+[ 4, 5, 3, 1, 2 ]
+Min swaps: 2
+
+Test 95: 
+[ 4, 5, 3, 2, 1 ]
+Min swaps: 3
+
+Test 96: 
+[ 5, 1, 2, 3, 4 ]
+Min swaps: 4
+
+Test 97: 
+[ 5, 1, 2, 4, 3 ]
+Min swaps: 3
+
+Test 98: 
+[ 5, 1, 3, 2, 4 ]
+Min swaps: 3
+
+Test 99: 
+[ 5, 1, 3, 4, 2 ]
+Min swaps: 2
+
+Test 100: 
+[ 5, 1, 4, 2, 3 ]
+Min swaps: 4
+
+Test 101: 
+[ 5, 1, 4, 3, 2 ]
+Min swaps: 3
+
+Test 102: 
+[ 5, 2, 1, 3, 4 ]
+Min swaps: 3
+
+Test 103: 
+[ 5, 2, 1, 4, 3 ]
+Min swaps: 2
+
+Test 104: 
+[ 5, 2, 3, 1, 4 ]
+Min swaps: 2
+
+Test 105: 
+[ 5, 2, 3, 4, 1 ]
+Min swaps: 1
+
+Test 106: 
+[ 5, 2, 4, 1, 3 ]
+Min swaps: 3
+
+Test 107: 
+[ 5, 2, 4, 3, 1 ]
+Min swaps: 2
+
+Test 108: 
+[ 5, 3, 1, 2, 4 ]
+Min swaps: 4
+
+Test 109: 
+[ 5, 3, 1, 4, 2 ]
+Min swaps: 3
+
+Test 110: 
+[ 5, 3, 2, 1, 4 ]
+Min swaps: 3
+
+Test 111: 
+[ 5, 3, 2, 4, 1 ]
+Min swaps: 2
+
+Test 112: 
+[ 5, 3, 4, 1, 2 ]
+Min swaps: 4
+
+Test 113: 
+[ 5, 3, 4, 2, 1 ]
+Min swaps: 3
+
+Test 114: 
+[ 5, 4, 1, 2, 3 ]
+Min swaps: 3
+
+Test 115: 
+[ 5, 4, 1, 3, 2 ]
+Min swaps: 4
+
+Test 116: 
+[ 5, 4, 2, 1, 3 ]
+Min swaps: 4
+
+Test 117: 
+[ 5, 4, 2, 3, 1 ]
+Min swaps: 3
+
+Test 118: 
+[ 5, 4, 3, 1, 2 ]
+Min swaps: 3
+
+Test 119: 
+[ 5, 4, 3, 2, 1 ]
+Min swaps: 2
+
