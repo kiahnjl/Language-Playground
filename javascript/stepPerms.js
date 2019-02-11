@@ -1,18 +1,18 @@
 
-let cache = {};
-
 function stepPerms(n) {
-    if(cache[n]) {
-        return cache[n];
-    }
+    let base = {
+        1: 1,
+        2: 2,
+        3: 4,
+        4: 7
+    };
     
     if(n < 0) {
         return 0;
-    } else if(n === 0) {
-        return 1;
+    } else if(base[n]) {
+        return base[n];
     } else {
-        cache[n] = stepPerms(n - 3) + stepPerms(n - 2) + stepPerms(n - 1);
-        return cache[n];
+        return stepPerms(n - 3) + stepPerms(n - 2) + stepPerms(n - 1);
     }
 }
 
