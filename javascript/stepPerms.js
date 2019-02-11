@@ -1,18 +1,10 @@
+// Constraints: 1 <= n <= 36
 
-function stepPerms(n) {
-    let base = {
-        1: 1,
-        2: 2,
-        3: 4,
-        4: 7
-    };
-    
-    if(n < 0) {
-        return 0;
-    } else if(base[n]) {
-        return base[n];
+function stepPerms(n, recent = [1, 2, 4]) {
+    if(n <= 3) {
+        return recent[n - 1];
     } else {
-        return stepPerms(n - 3) + stepPerms(n - 2) + stepPerms(n - 1);
+        return stepPerms(n - 1, [recent[1], recent[2], recent[0] + recent[1] + recent[2]]);
     }
 }
 
