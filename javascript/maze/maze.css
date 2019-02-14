@@ -1,0 +1,26 @@
+.maze {
+    display: inline-block;
+}
+
+.row {
+    height: 50px;
+    white-space: nowrap;
+}
+
+.cell {
+    display: inline-block;
+    width: 50px;
+    height: 100%;
+}
+
+.cell-path {
+    background-color: #6ecb6e;
+}
+
+.cell-wall {
+    background-color: rgba(0,0,0,0.6);
+}
+
+.cell-active {
+    background-color: rgba(208, 16, 18, 0.6);
+}
